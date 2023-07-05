@@ -1,29 +1,34 @@
+
 package telran.java47.person.service;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import telran.java47.person.dto.AddressDto;
+import telran.java47.person.dto.ChildDto;
 import telran.java47.person.dto.CityPopulationDto;
+import telran.java47.person.dto.EmployeeDto;
 import telran.java47.person.dto.PersonDto;
 
 public interface PersonService {
 	Boolean addPerson(PersonDto personDto);
 
 	PersonDto findPersonById(Integer id);
+	
+	PersonDto removePerson(Integer id);
+	
+	PersonDto updatePersonName(Integer id, String name);
+	
+	PersonDto updatePersonAddress(Integer id, AddressDto addressDto);
+	
+	Iterable<PersonDto> findPersonsByCity(String city);
+	
+	Iterable<PersonDto> findPersonsByName(String name);
+	
+	Iterable<PersonDto> findPersonsBetweenAge(Integer minAge, Integer maxAge);
+	
+	Iterable<CityPopulationDto> getCitiesPopulation();
 
-	PersonDto UpdatePersonByName(Integer id,String newName);
+	Boolean addEmployee(EmployeeDto personDto);
 
-	PersonDto updatePersonByAddress(Integer id,AddressDto addressDto);
+	Boolean addChild(ChildDto personDto);
 
-	PersonDto removePersonById(Integer id);
-
-	List<PersonDto> findPersonsByCity(String city);
-
-	List<PersonDto> findPersonsByAgePeriod(Integer ageFrom, Integer ageTo);
-
-	List<PersonDto> findPersonsByNameIgnoreCase(String name);
-
-	List<CityPopulationDto> getPopulationByCity();
 
 }
