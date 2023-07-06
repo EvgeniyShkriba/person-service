@@ -20,7 +20,7 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 @Getter
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person implements Serializable{
 	
 	private static final long serialVersionUID = -1250554987023825175L;
